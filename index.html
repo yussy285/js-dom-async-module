@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive To Do List</title>
+  <style>
+    li {
+      color: gray;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    .tick {
+      display: none;
+      margin-right: 10px;
+      color: green;
+    }
+
+    .completed {
+      color: green;
+    }
+
+    .completed .tick {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive To Do List</h1>
+
+  <ul id="todo-list">
+    <li><span class="tick">✓</span> Buy beads</li>
+    <li><span class="tick">✓</span> Make bracelet</li>
+    <li><span class="tick">✓</span> Post on Instagram</li>
+  </ul>
+
+  <script>
+    const items = document.querySelectorAll('#todo-list li');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('completed');
+      });
+    });
+  </script>
+
+</body>
+</html>
